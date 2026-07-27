@@ -2,7 +2,7 @@
 
 A macOS app to translate text with AI.
 
-<img width="1280" height="720" alt="linguine" src="https://github.com/user-attachments/assets/fcc7067f-b0ac-4465-ad56-e7b05d0f06a3" />
+<img width="1280" height="720" alt="linguine" src="https://github.com/user-attachments/assets/dfdabda3-aeb8-4469-be8d-ea12de79a45a" />
 
 ## Features
 * Translate text into different languages.
