@@ -9,7 +9,7 @@ A macOS app to translate text with AI.
 * Clean, native SwiftUI interface for seamless integration.
 
 ## Requirements
-* **Xcode**: compatible with macOS 15+ (oder deine gewünschte Version)
+* **Xcode**: compatible with macOS 26+
 * **Ollama**: recommended model --> `translategemma:4b`
 
 ## Setup and Build
