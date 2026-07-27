@@ -15,11 +15,12 @@ struct inputText: View {
         
         TextEditor(text: $model.inputText)
             .textEditorStyle(.plain)
+            .font(.system(size: 16))
+            .lineSpacing(4)
             .padding()
             .glassEffect(in: RoundedRectangle(cornerRadius: 16))
             .padding()
-            .scrollDisabled(true)
-
+            .foregroundStyle(Color.white)
         
     }
 }

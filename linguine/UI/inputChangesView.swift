@@ -7,35 +7,22 @@
 
 import SwiftUI
 
-struct inputViewChanges: View {
+struct inputChangesView: View {
     
-    @State var inputChanges = ""
+    @Bindable var model: LinguiniModel
 
     var body: some View {
         HStack {
             
-            TextField("Your changes...", text: $inputChanges)
+            TextField("Your changes...", text: $model.inputChanges)
                 .textFieldStyle(.plain)
+                .font(.system(size: 16))
+                .lineSpacing(4)
                 .padding()
                 .glassEffect()
-            
-            Button{
-
-                
-            }label: {
-                Image(systemName: "checkmark")
-                    .padding()
-                    .contentShape(Rectangle())
-                    .glassEffect()
-            }
-            .buttonStyle(.plain)
-
             
         }
         .padding()
     }
-}
-
-#Preview {
-    inputViewChanges()
+    
 }

@@ -7,33 +7,22 @@
 
 import Foundation
 
-@Observable
 class OllamaService {
-    
-    struct ChatMessage: Codable {
-        let role: String
-        let content: String
-    }
-
-    static private var chatHistory: [ChatMessage] = []
-    
+        
     static func sendToOllama(_ text: String) async -> AttributedString{
         
         var req = URLRequest(url: URL(string: "http://127.0.0.1:11434/api/chat")!)
         req.httpMethod = "POST"
         
-        chatHistory.append(ChatMessage(role: "user", content: text))
-        
-        if chatHistory.count > 4{
-            chatHistory.removeFirst()
-        }
-
-        let messagesJson = chatHistory.map { ["role": $0.role, "content": $0.content] }
-        
         req.httpBody = try? JSONSerialization.data(withJSONObject: [
             "model": "translategemma:4b",
-            "messages": messagesJson,
-            "stream": false
+            "stream": false,
+            "messages": [
+                    [
+                        "role": "user",
+                        "content": text
+                    ]
+                ]
         ])
         req.setValue("application/json", forHTTPHeaderField: "Content-Type")
                 
@@ -44,7 +33,6 @@ class OllamaService {
             var options = AttributedString.MarkdownParsingOptions()
             options.interpretedSyntax = .inlineOnlyPreservingWhitespace
             let md = (try? AttributedString(markdown: message, options: options)) ?? AttributedString("")
-            chatHistory.append(ChatMessage(role: "assistant", content: String(md.characters)))
             return md
         }
         

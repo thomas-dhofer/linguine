@@ -8,8 +8,34 @@
 import SwiftUI
 
 struct linguineView: View {
+    
+    @State private var model = LinguiniModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        HStack{
+            
+            Text("Ready to translate")
+                .font(Font.largeTitle.bold())
+                .padding()
+            
+            Spacer()
+            
+        }
+        
+        inputChangesView(model: model)
+        
+        HStack{
+            
+            inputText(model: model)
+            
+            Image(systemName: "arrowshape.right.fill")
+                .fontWeight(.black)
+            
+            answerView(model: model)
+        }
+        
+        translateButton(model: model)
     }
 }
 

@@ -8,11 +8,19 @@
 import SwiftUI
 
 struct answerView: View {
+    
+    @Bindable var model: LinguiniModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        TextEditor(text: $model.outputText)
+            .textEditorStyle(.plain)
+            .font(.system(size: 16))
+            .lineSpacing(4)
+            .padding()
+            .glassEffect(in: RoundedRectangle(cornerRadius: 16))
+            .padding()
+            .foregroundStyle(Color.white)
     }
 }
 
-#Preview {
-    answerView()
-}
