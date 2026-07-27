@@ -15,7 +15,7 @@ struct answerView: View {
         
         TextEditor(text: $model.outputText)
             .textEditorStyle(.plain)
-            .font(.system(size: 16))
+            .font(.system(size: 14))
             .lineSpacing(4)
             .padding()
             .glassEffect(in: RoundedRectangle(cornerRadius: 16))

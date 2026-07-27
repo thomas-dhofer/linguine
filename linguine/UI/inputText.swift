@@ -15,7 +15,7 @@ struct inputText: View {
         
         TextEditor(text: $model.inputText)
             .textEditorStyle(.plain)
-            .font(.system(size: 16))
+            .font(.system(size: 14))
             .lineSpacing(4)
             .padding()
             .glassEffect(in: RoundedRectangle(cornerRadius: 16))

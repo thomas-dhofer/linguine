@@ -41,9 +41,7 @@ struct translateButton: View {
                 CRITICAL INSTRUCTION: Output ONLY the raw translation text. Do not include introductory text, explanations, or quotes.
                 
                 """
-                
-                print(prompt)
-                
+                            
                 let response = await OllamaService.sendToOllama(prompt)
                 
                 disabled = false
