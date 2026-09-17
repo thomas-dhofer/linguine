@@ -13,6 +13,7 @@ struct linguineApp: App {
         WindowGroup {
             
             linguineView()
+                .frame(minWidth: 1000, minHeight: 600)
                 
         }
     }
