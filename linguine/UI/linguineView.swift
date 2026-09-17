@@ -36,6 +36,7 @@ struct linguineView: View {
         }
         
         translateButton(model: model)
+    
     }
 }
 
